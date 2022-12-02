@@ -5,6 +5,8 @@ import curse.database.IVehicleDB;
 import curse.database.VehicleDB;
 import curse.model.*;
 import curse.model.builders.MotorcycleBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -12,18 +14,20 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+@Component
 public class Gui {
-    private final static Gui instance=new Gui();
+
+    @Autowired
+    IVehicleDB vehicleDB;
 
     public final BufferedReader reader =
             new BufferedReader(new InputStreamReader(System.in));
 
-    private Gui() {
-    }
-
-    public static Gui getInstance(){
-        return instance;
-    }
+    //  private final static Gui instance=new Gui();
+   // private Gui() {}
+//    public static Gui getInstance(){
+//        return instance;
+//    }
     public void showMenu(){
         System.out.println(" MENU ");
         System.out.println("1.List vehicles");
@@ -54,7 +58,6 @@ public class Gui {
     }
 
     public void addVehicle(){
-        IVehicleDB vehicleDB=VehicleDB.getInstance();
         System.out.println("1.Car");
         System.out.println("2.Bus");
         System.out.println("3.Motocycle");

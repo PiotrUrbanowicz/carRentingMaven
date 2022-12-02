@@ -1,16 +1,19 @@
 package curse.database;
 
 import curse.model.User;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@Component
 public class UserDB implements IUserDB {
     private final HashMap<String,User> users=new HashMap<>();
     private final String USER_DB_FILE="User.txt";
-    private final static UserDB instance=new UserDB();
+
+    // private UserDB instance=new UserDB();
     private UserDB() {
 //        this.users.put("piotr",new User("piotr",
 //                "34fabc41d484eb1563a1c188e0b30718",User.Rule.USER));
@@ -44,9 +47,9 @@ public class UserDB implements IUserDB {
         return new ArrayList<>(users.values());
     }
 
-    public static UserDB getInstance(){
-        return instance;
-    }
+//    public static UserDB getInstance(){
+//        return instance;
+//    }
 
 
 

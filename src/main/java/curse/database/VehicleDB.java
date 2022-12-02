@@ -5,18 +5,21 @@ import curse.model.Bus;
 import curse.model.Car;
 import curse.model.Motorcycle;
 import curse.model.Vehicle;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class VehicleDB implements IVehicleDB {
 
     private final List<Vehicle> vehicles=new ArrayList<>();
     private final String VEHICLE_DB_FILE ="VehicleDB.txt";
-    private final static VehicleDB instance=new VehicleDB();
 
-    private VehicleDB(){
+    //private final static VehicleDB instance=new VehicleDB();
+
+    public VehicleDB(){
         try {
             BufferedReader reader=new BufferedReader(new FileReader(VEHICLE_DB_FILE));
             String line;
@@ -55,9 +58,9 @@ public class VehicleDB implements IVehicleDB {
         return vehicles;
     }
 
-    public static VehicleDB getInstance(){
-        return instance;
-    }
+//    public static VehicleDB getInstance(){
+//        return instance;
+//    }
 
     ///////////////////////
     public void persistToFile(){

@@ -7,21 +7,32 @@ import curse.database.UserDB;
 import curse.database.VehicleDB;
 import curse.gui.Gui;
 import curse.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+@Component
 public class Engine {
 
-    private final static Engine instance=new Engine();
-    private final IVehicleDB vehicleDB=VehicleDB.getInstance();
-    private final IUserDB userDB=UserDB.getInstance();
-    private final Gui gui=Gui.getInstance();
-    private final Authenticator authenticator=Authenticator.getInstance();
-    private Engine() {}
+   // private final static Engine instance=new Engine();
 
-    public static Engine getInstance(){
-        return instance;
-    }
+    @Autowired
+    private IVehicleDB vehicleDB;
+    @Autowired
+    private IUserDB userDB;
+
+    @Autowired
+    private Gui gui;
+
+    @Autowired
+    private Authenticator authenticator;
+
+   // private Engine() {}
+
+//    public static Engine getInstance(){
+//        return instance;
+//    }
 
     public void start() throws IOException {
         boolean isWorking= authenticator.authenticate();
