@@ -1,0 +1,8 @@
+Car;c1;1200.0;true
+Car;c2;1200.0;false
+Car;c3;1200.0;false
+Car;c4;1200.0;false
+Car;c5;1200.0;false
+Bus;b1;1200.0;false;20
+Bus;b2;1200.0;false;40
+Motorcycle;c1;1200.0;false;false
