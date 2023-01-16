@@ -41,7 +41,7 @@ public class Gui {
     public void listVehicles(List<Vehicle> vehicles){
 
         for (Vehicle currentVehicle : vehicles) {
-            System.out.println(currentVehicle);//.toString() wywoluje metoda println()
+            System.out.println(currentVehicle);
         }
     }
 

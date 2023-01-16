@@ -16,7 +16,7 @@ public class UserDB implements IUserDB {
     // private UserDB instance=new UserDB();
     private UserDB() {
 //        this.users.put("piotr",new User("piotr",
-//                "34fabc41d484eb1563a1c188e0b30718",User.Rule.USER));
+//                "34fabc41d484eb1563a1c188e0b30718",User.Rule.USER));//admin
 //        this.users.put("admin",new User("admin",
 //                "34fabc41d484eb1563a1c188e0b30718", User.Rule.ADMIN));//admin
 
@@ -41,9 +41,6 @@ public class UserDB implements IUserDB {
     }
 
     public List<User> getUsers() {
-        //this.users.values();
-        //nie mogę zrzutować bo nie wiem co to za kolekcje
-    //    Collection<User> c=new ArrayList<>(users.values());//jak to wytłumaczysz
         return new ArrayList<>(users.values());
     }
 

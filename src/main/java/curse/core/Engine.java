@@ -37,14 +37,14 @@ public class Engine {
     public void start() throws IOException {
         boolean isWorking= authenticator.authenticate();
 
-        //zadajesz sobie pytanie czy ktoś kiedyś powinien tą zmienną zmienić jeśli nie to wrzucasz final
+
         while(isWorking) {
             gui.showMenu();
             switch (gui.getReader().readLine()) {
                 case "1":
                     gui.listVehicles(vehicleDB.getVehicles());
                     break;
-                case "2":// czemu nie wsadzimy tego do gui
+                case "2":
                     System.out.println("Plate: ");
                     if (vehicleDB.rentVehicle(gui.getReader().readLine())) {
                         System.out.println("car is rented");
